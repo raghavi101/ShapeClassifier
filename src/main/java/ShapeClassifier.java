@@ -134,9 +134,7 @@ public class ShapeClassifier {
 				// too many bad guesses
 				badGuesses++;
 				if (badGuesses >= 3) {
-					System.out.println("ERROR: Bad guess limit Exceeded");
-					System.exit(1);
-
+					throw new IllegalStateException("Bad guess limit exceeded");
 				}
 				return "No: " + makeSuggestion(parameters, shapeGuess, shapeGuessResult);
 			}
